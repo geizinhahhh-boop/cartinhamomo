@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Para você ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.caixa {
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 20px;
+  max-width: 500px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: #ff4d6d;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#carta {
+  display: none;
+}
+
+/* corações */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: subir 5s linear infinite;
+}
+
+@keyframes subir {
+  0% {transform: translateY(0); opacity:1;}
+  100% {transform: translateY(-800px); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="inicio" class="caixa">
+  <h2>Oi, amor ❤️</h2>
+  <p>
+    Antes de você abrir… eu só queria te pedir uma coisa:<br><br>
+
+    lê com calma.<br><br>
+
+    Cada palavra aqui tem um pedacinho do meu coração, do jeitinho mais sincero que eu consegui colocar. Não é perfeita, mas é real.<br><br>
+
+    Talvez você não faça ideia do quanto isso significa pra mim… porque não é fácil me abrir assim. Mas você vale isso. Você vale cada tentativa, cada sentimento, cada palavra.<br><br>
+
+    Então só… clica e sente. 💌
+  </p>
+
+  <button onclick="abrirCarta()">Abrir 💖</button>
+</div>
+
+<!-- CARTA -->
+<div id="carta" class="caixa">
+  <h2>Pra você ❤️</h2>
+
+  <p>
+    Eu fiquei pensando muito antes de escrever isso… porque não é fácil colocar em palavras algo que eu ainda tô aprendendo a sentir de novo. Mas a verdade é que, desde o começo, desde aquele comecinho nosso, alguma coisa em você me tocou de um jeito diferente.<br><br>
+
+    E é estranho… porque foi rápido. Muito rápido.<br>
+    Mas ao mesmo tempo, não parece errado.<br><br>
+
+    Eu descobri com você que não existe tempo certo pra amar alguém. Não tem relógio, não tem regra. Quando é de verdade, simplesmente acontece — e aconteceu comigo.<br><br>
+
+    Você foi muito além do que eu imaginei. Muito além do que eu pedi em oração. E, sendo sincera, você apareceu num momento em que eu ainda tava cheia de medo, cheia de dúvidas, meio desacreditada… tentando me proteger de tudo.<br><br>
+
+    Eu ainda tenho medos. Tenho inseguranças. Às vezes minha cabeça tenta me sabotar, tenta me fazer acreditar em coisas que não são reais.<br>
+    Mas aí vem você…<br><br>
+
+    E com você, pela primeira vez em muito tempo, eu não sinto vontade de fugir.<br>
+    Eu sinto vontade de tentar.<br><br>
+
+    Tentar dar certo.<br>
+    Tentar construir algo bonito.<br>
+    Tentar viver isso de verdade, sem travas, sem correr.<br><br>
+
+    Você me trouxe uma sensação que eu achei que tinha perdido: a de querer amar alguém de novo, com calma, com verdade, com entrega.<br><br>
+
+    E não é que eu não tenha medo…<br>
+    É que, com você, o que eu sinto é maior que ele.<br><br>
+
+    Eu gosto de você de um jeito leve, mas ao mesmo tempo profundo.<br>
+    Gosto da forma como você existe na minha vida, mesmo nos dias difíceis.<br>
+    Gosto de como, mesmo sem perceber, você me faz querer ser melhor.<br><br>
+
+    E eu só queria que você soubesse disso…<br>
+    Que, independente do tempo, o que eu sinto é real.<br><br>
+
+    E que, mesmo com tudo, eu escolho você.<br><br>
+
+    Todos os dias. ❤️
+  </p>
+</div>
+
+<script>
+function abrirCarta() {
+  document.getElementById("inicio").style.display = "none";
+  document.getElementById("carta").style.display = "block";
+
+  for (let i = 0; i < 30; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+  }
+}
+</script>
+
+</body>
+</html>
